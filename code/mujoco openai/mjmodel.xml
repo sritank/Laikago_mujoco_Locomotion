@@ -1,0 +1,164 @@
+<mujoco model="laikago">
+    <compiler angle="radian" meshdir="model/laikago/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="chassis_vhacd_mod_zup" file="chassis_vhacd_mod_zup.stl" />
+        <mesh name="hip_motor_mirror" file="hip_motor_mirror.stl" />
+        <mesh name="upper_leg_right_vhacd" file="upper_leg_right_vhacd.stl" />
+        <mesh name="lower_leg_3_collision" file="lower_leg_3_collision.stl" />
+        <mesh name="hip_motor" file="hip_motor.stl" />
+        <mesh name="upper_leg_left_vhacd" file="upper_leg_left_vhacd.stl" />
+        <hfield name="terrain" size="30 30 5 0.1" nrow="201" ncol="201" />
+    </asset>
+    <worldbody>
+        <geom name="floor" size="40 40 40" pos="0 0 -0.6" type="plane" friction="2 0.01 0.01" rgba="0.8 0.9 0.8 1" />
+        <light pos="0 0 1.3" dir="0 0 -1" cutoff="50" exponent="1" diffuse="0.2 0.2 0.2" specular="0.5 0.5 0.5" />
+        <body pos="0 0 0">
+            <inertial pos="-0.0107067 4.176e-05 -0.00602116" quat="0.00678463 0.705437 0.00893449 0.708684" mass="14.0677" diaginertia="0.378099 0.364073 0.062862" />
+            <joint type="free" />
+            <geom type="mesh" group="1" rgba="0 0 1 1" mesh="chassis_vhacd_mod_zup" />
+            <site name="cog" pos="0 0 0" />
+            <body name="linkQuadFR1" pos="0.199095 -0.0817145 -0.03" quat="0.500003 0.5 0.499997 0.5">
+                <inertial pos="0.02 0 0" mass="1.095" diaginertia="0.0001 0.0001 0.0001" />
+                <joint name="jointQuadFR1" pos="0 0 0" axis="0 0 1" stiffness="2060" damping="6" />
+                <geom type="mesh" group="1" rgba="1 1 1 1" mesh="hip_motor_mirror" />
+                <site name="linkQuadFR1" pos="0 0 0" />
+                <body name="linkQuadFR2" pos="-0.053565 0 0">
+                    <inertial pos="0 -0.04 -0.04" mass="1.527" diaginertia="0.0001 0.0001 0.0001" />
+                    <joint name="jointQuadFR2" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                    <geom type="mesh" group="1" rgba="1 1 1 1" mesh="upper_leg_right_vhacd" />
+                    <site name="linkQuadFR2" pos="0 0 0" />
+                    <body name="linkQuadFR3" pos="0.02069 -0.20833 -0.1422">
+                        <inertial pos="0 -0.186393 -0.0205865" quat="0.494415 0.505524 -0.505524 0.494415" mass="0.341" diaginertia="0.000697746 0.000697746 0.000125" />
+                        <joint name="jointQuadFR3" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                        <geom quat="0.707109 0 0.707105 0" type="mesh" group="1" rgba="1 1 1 1" mesh="lower_leg_3_collision" />
+                        <geom size="0.0001" pos="0 -0.25 -0.022" group="1" rgba="1 1 1 1" />
+                        <site name="linkQuadFR3" pos="0 0 0" />
+                        <site name="tipQuadFR3" pos="0 -0.25 -0.022" size="0.05" />
+                    </body>
+                </body>
+            </body>
+            <body name="linkQuadFL1" pos="0.199095 0.0817145 -0.03" quat="0.500003 0.5 0.499997 0.5">
+                <inertial pos="-0.02 0 0" mass="1.095" diaginertia="0.0001 0.0001 0.0001" />
+                <joint name="jointQuadFL1" pos="0 0 0" axis="0 0 1" stiffness="2060" damping="6" />
+                <geom type="mesh" group="1" rgba="0 0 0 1" mesh="hip_motor" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="hip_motor" />
+                <site name="linkQuadFL1" pos="0 0 0" />
+                <body name="linkQuadFL2" pos="0.055855 0 0">
+                    <inertial pos="0 -0.04 -0.04" mass="1.527" diaginertia="0.0001 0.0001 0.0001" />
+                    <joint name="jointQuadFL2" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                    <geom type="mesh" group="1" rgba="1 1 1 1" mesh="upper_leg_left_vhacd" />
+                    <site name="linkQuadFL2" pos="0 0 0" />
+                    <body name="linkQuadFL3" pos="-0.02069 -0.20833 -0.1422">
+                        <inertial pos="0 -0.186393 -0.0205865" quat="0.494415 0.505524 -0.505524 0.494415" mass="0.341" diaginertia="0.000697746 0.000697746 0.000125" />
+                        <joint name="jointQuadFL3" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                        <geom quat="0.707109 0 0.707105 0" type="mesh" group="1" rgba="1 1 1 1" mesh="lower_leg_3_collision" />
+                        <geom size="0.0001" pos="0 -0.25 -0.022" group="1" rgba="1 1 1 1" />
+                        <site name="linkQuadFL3" pos="0 0 0" />
+                        <site name="tipQuadFL3" pos="0 -0.25 -0.022" size="0.05" />
+                    </body>
+                </body>
+            </body>
+            <body name="linkQuadRR1" pos="-0.238195 -0.0817145 -0.03" quat="0.500003 0.5 0.499997 0.5">
+                <inertial pos="0.02 0 0" mass="1.095" diaginertia="0.0001 0.0001 0.0001" />
+                <joint name="jointQuadRR1" pos="0 0 0" axis="0 0 1" stiffness="2060" damping="6" />
+                <geom type="mesh" group="1" rgba="1 1 1 1" mesh="hip_motor_mirror" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="hip_motor_mirror" />
+                <site name="linkQuadRR1" pos="0 0 0" />
+                <body name="linkQuadRR2" pos="-0.053565 0 0">
+                    <inertial pos="0 -0.04 -0.04" mass="1.527" diaginertia="0.0001 0.0001 0.0001" />
+                    <joint name="jointQuadRR2" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="1.5" />
+                    <geom type="mesh" group="1" rgba="1 1 1 1" mesh="upper_leg_right_vhacd" />
+                    <site name="linkQuadRR2" pos="0 0 0" />
+                    <body name="linkQuadRR3" pos="0.02069 -0.20833 -0.1422">
+                        <inertial pos="0 -0.186393 -0.0205865" quat="0.494415 0.505524 -0.505524 0.494415" mass="0.341" diaginertia="0.000697746 0.000697746 0.000125" />
+                        <joint name="jointQuadRR3" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="1.5" />
+                        <geom quat="0.707109 0 0.707105 0" type="mesh" group="1" rgba="1 1 1 1" mesh="lower_leg_3_collision" />
+                        <geom size="0.0001" pos="0 -0.25 -0.022" group="1" rgba="1 1 1 1" />
+                        <site name="linkQuadRR3" pos="0 0 0" />
+                        <site name="tipQuadRR3" pos="0 -0.25 -0.022" size="0.05" />
+                    </body>
+                </body>
+            </body>
+            <body name="linkQuadRL1" pos="-0.238195 0.0817145 -0.03" quat="0.500003 0.5 0.499997 0.5">
+                <inertial pos="-0.02 0 0" mass="1.095" diaginertia="0.0001 0.0001 0.0001" />
+                <joint name="jointQuadRL1" pos="0 0 0" axis="0 0 1" stiffness="2060" damping="6" />
+                <geom type="mesh" group="1" rgba="1 1 1 1" mesh="hip_motor" />
+                <site name="linkQuadRL1" pos="0 0 0" />
+                <body name="linkQuadRL2" pos="0.055855 0 0">
+                    <inertial pos="0 -0.04 -0.04" mass="1.527" diaginertia="0.0001 0.0001 0.0001" />
+                    <joint name="jointQuadRL2" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                    <geom type="mesh" group="1" rgba="1 1 1 1" mesh="upper_leg_left_vhacd" />
+                    <site name="linkQuadRL2" pos="0 0 0" />
+                    <body name="linkQuadRL3" pos="-0.02069 -0.20833 -0.1422">
+                        <inertial pos="0 -0.186393 -0.0205865" quat="0.494415 0.505524 -0.505524 0.494415" mass="0.341" diaginertia="0.000597746 0.000597746 2.5e-05" />
+                        <joint name="jointQuadRL3" pos="0 0 0" axis="-1 0 0" stiffness="2060" damping="6" />
+                        <geom quat="0.707109 0 0.707105 0" type="mesh" group="1" rgba="1 1 1 1" mesh="lower_leg_3_collision" />
+                        <geom size="0.0001" pos="0 -0.25 -0.022" group="1" rgba="1 1 1 1" />
+                        <site name="linkQuadRL3" pos="0 0 0" />
+                        <site name="tipQuadRL3" pos="0 -0.25 -0.022" size="0.05" />
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <general name="FR1" joint="jointQuadFR1" gear="6 0 0 0 0 0" />
+        <general name="FR2" joint="jointQuadFR2" gear="6 0 0 0 0 0" />
+        <general name="FR3" joint="jointQuadFR3" gear="6 0 0 0 0 0" />
+        <general name="FL1" joint="jointQuadFL1" gear="6 0 0 0 0 0" />
+        <general name="FL2" joint="jointQuadFL2" gear="6 0 0 0 0 0" />
+        <general name="FL3" joint="jointQuadFL3" gear="6 0 0 0 0 0" />
+        <general name="RR1" joint="jointQuadRR1" gear="6 0 0 0 0 0" />
+        <general name="RR2" joint="jointQuadRR2" gear="6 0 0 0 0 0" />
+        <general name="RR3" joint="jointQuadRR3" gear="6 0 0 0 0 0" />
+        <general name="RL1" joint="jointQuadRL1" gear="6 0 0 0 0 0" />
+        <general name="RL2" joint="jointQuadRL2" gear="6 0 0 0 0 0" />
+        <general name="RL3" joint="jointQuadRL3" gear="6 0 0 0 0 0" />
+    </actuator>
+    <sensor>
+        <jointpos joint="jointQuadFR1" name="FR1angle" />
+        <jointpos joint="jointQuadFR2" name="FR2angle" />
+        <jointpos joint="jointQuadFR3" name="FR3angle" />
+        <jointpos joint="jointQuadFL1" name="FL1angle" />
+        <jointpos joint="jointQuadFL2" name="FL2angle" />
+        <jointpos joint="jointQuadFL3" name="FL3angle" />
+        <jointpos joint="jointQuadRR1" name="RR1angle" />
+        <jointpos joint="jointQuadRR2" name="RR2angle" />
+        <jointpos joint="jointQuadRR3" name="RR3angle" />
+        <jointpos joint="jointQuadRL1" name="RL1angle" />
+        <jointpos joint="jointQuadRL2" name="RL2angle" />
+        <jointpos joint="jointQuadRL3" name="RL3angle" />
+        <jointvel joint="jointQuadFR1" name="FR1omeg" />
+        <jointvel joint="jointQuadFR2" name="FR2omeg" />
+        <jointvel joint="jointQuadFR3" name="FR3omeg" />
+        <jointvel joint="jointQuadFL1" name="FL1omeg" />
+        <jointvel joint="jointQuadFL2" name="FL2omeg" />
+        <jointvel joint="jointQuadFL3" name="FL3omeg" />
+        <jointvel joint="jointQuadRR1" name="RR1omeg" />
+        <jointvel joint="jointQuadRR2" name="RR2omeg" />
+        <jointvel joint="jointQuadRR3" name="RR3omeg" />
+        <jointvel joint="jointQuadRL1" name="RL1omeg" />
+        <jointvel joint="jointQuadRL2" name="RL2omeg" />
+        <jointvel joint="jointQuadRL3" name="RL3omeg" />
+        <velocimeter site="cog" name="cgvel" />
+        <accelerometer site="cog" name="cgacc" />
+        <gyro site="cog" name="cggyro" />
+        <torque site="linkQuadFR1" name="FR1tq" />
+        <torque site="linkQuadFR2" name="FR2tq" />
+        <torque site="linkQuadFR3" name="FR3tq" />
+        <torque site="linkQuadFL1" name="FL1tq" />
+        <torque site="linkQuadFL2" name="FL2tq" />
+        <torque site="linkQuadFL3" name="FL3tq" />
+        <torque site="linkQuadRR1" name="RR1tq" />
+        <torque site="linkQuadRR2" name="RR2tq" />
+        <torque site="linkQuadRR3" name="RR3tq" />
+        <torque site="linkQuadRL1" name="RL1tq" />
+        <torque site="linkQuadRL2" name="RL2tq" />
+        <torque site="linkQuadRL3" name="RL3tq" />
+        <force site="tipQuadFR3" name="FR3touch" />
+        <force site="tipQuadFL3" name="FL3touch" />
+        <force site="tipQuadRR3" name="RR3touch" />
+        <force site="tipQuadRL3" name="RL3touch" />
+    </sensor>
+</mujoco>

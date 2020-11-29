@@ -1,0 +1,20 @@
+MuJoCo Pro Personal license activation key, number 75433, type 6.
+
+Issued to Srinath Tankasala <stankasa@utexas.edu>.
+
+Expires November 15, 2021.
+
+This file activates MuJoCo Pro on a single computer with id:
+LINUX_2YnN10VM0S6yh6_x51CGBiAL98PeJ48114Q8K4N271
+
+Do not modify this file. Its entire content, including the
+plain text section, is used by the activation manager.
+
+b29c5226d4868175c13131959f618fd1fc7d34a3bf2ed9335b8e14cb26dbb7f3
+1634e12d4b1cd54a95257ba62a5462d45d4ae711e4e44889851bc32853ede1c0
+7352fb34bed69e8835264db9abb5c6816559dce529660a5716106d5ef900936e
+2a48570fba3d041afd521f5845787eed355f4ead96aeab1b16a45c53b19d531e
+6970d94595deeaa5ade3ee4f169abb73a24578399488b831239be98da122bc61
+9fbc5001decc1da93e0e982d9c745cb25b2c1b0e55cd686e554ea8790686d1b6
+a8795a02c72aba6b9d3ed398dfa5e31b25f82dfb76a18ca6bdf3284f7c6f5558
+fed3966b34245e27d9b2f76eb2176fcf415fff882f4067df0a1e2c76d252cd6a

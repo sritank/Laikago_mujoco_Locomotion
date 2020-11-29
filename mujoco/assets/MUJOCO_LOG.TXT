@@ -1,0 +1,138 @@
+Sun Nov 22 15:55:19 2020
+ERROR: Could not open activation key file mjkey.txt
+
+Sun Nov 22 17:00:21 2020
+ERROR: Could not open activation key file mjkey.txt
+
+Sun Nov 22 19:33:17 2020
+ERROR: Could not open activation key file mjkey.txt
+
+Sun Nov 22 19:50:24 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 301.3660.
+
+Sun Nov 22 19:50:24 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 301.3640.
+
+Sun Nov 22 19:50:43 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 0.2840.
+
+Sun Nov 22 19:50:43 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 0.0000.
+
+Sun Nov 22 19:54:40 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 1.1240.
+
+Sun Nov 22 19:54:40 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 0.0000.
+
+Sun Nov 22 20:10:58 2020
+WARNING: Inertia matrix is too close to singular at DOF 16. Check model. Time = 2.0580.
+
+Sun Nov 22 20:10:59 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 2.0560.
+
+Mon Nov 23 01:45:57 2020
+WARNING: Inertia matrix is too close to singular at DOF 15. Check model. Time = 0.0780.
+
+Mon Nov 23 01:45:58 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0760.
+
+Mon Nov 23 01:48:45 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 1.0100.
+
+Mon Nov 23 01:48:45 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 1.0080.
+
+Mon Nov 23 01:48:45 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0240.
+
+Mon Nov 23 01:48:45 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0020.
+
+Mon Nov 23 01:48:45 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 01:48:47 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.1000.
+
+Mon Nov 23 01:48:47 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 01:48:47 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 01:48:47 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 02:48:08 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0040.
+
+Mon Nov 23 02:48:09 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Mon Nov 23 05:12:00 2020
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.3080.
+
+Mon Nov 23 05:12:13 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 1.2400.
+
+Mon Nov 23 05:12:13 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 1.2380.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0240.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0020.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0020.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0020.
+
+Mon Nov 23 05:12:14 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0020.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.2160.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Mon Nov 23 05:12:18 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.0000.
+
+Tue Nov 24 04:44:07 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 1.0160.
+
+Tue Nov 24 04:44:08 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 1.0140.
+
+Tue Nov 24 04:44:23 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 0.9500.
+
+Fri Nov 27 20:33:41 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 3.8740.
+
+Fri Nov 27 20:33:42 2020
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 3.8720.
+
+Fri Nov 27 20:33:46 2020
+WARNING: Inertia matrix is too close to singular at DOF 12. Check model. Time = 1.0600.
+

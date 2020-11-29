@@ -1,0 +1,813 @@
+<?xml version="1.0" ?>
+<robot name="laikago">
+<mujoco>
+    <compiler
+    meshdir="./laikago" 
+    balanceinertia="true"
+    discardvisual="false" />
+</mujoco>
+
+  <!--==================== TODO ===========================================-->
+
+
+  <!--==================== Model Description ==============================-->
+
+  <!--=====================================================================-->
+  <!--==================== Color Table ====================================-->
+  <!--=====================================================================-->
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1"/>
+  </material>
+
+  <material name="silver">
+    <color rgba="0.75 0.75 0.75 1"/>
+  </material>
+
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1"/>
+  </material>
+
+  <material name="maroon">
+    <color rgba="0.5 0.0 0.0 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1.0 0.0 0.0 1"/>
+  </material>
+
+  <material name="orange">
+    <color rgba="1.0 0.65 0.0 1"/>
+  </material>
+
+  <material name="yellow">
+    <color rgba="1.0 1.0 0.0 1"/>
+  </material>
+
+  <material name="olive">
+    <color rgba="0.5 0.5 0.0 1"/>
+  </material>
+
+  <material name="lime">
+    <color rgba="0.0 1.0 0.0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.0 0.5 0.0 1"/>
+  </material>
+
+  <material name="aqua">
+    <color rgba="0.0 1.0 1.0 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.0 0.0 1.0 1"/>
+  </material>
+
+  <material name="navy">
+    <color rgba="0.0 0.0 0.5 1"/>
+  </material>
+
+  <material name="teal">
+    <color rgba="0.0 0.5 0.5 1"/>
+  </material>
+
+  <material name="fuchsia">
+    <color rgba="1.0 0.0 1.0 1"/>
+  </material>
+
+  <material name="purple">
+    <color rgba="0.5 0.0 0.5 1"/>
+  </material>
+
+
+  <!--=====================================================================-->
+  <!--==================== Laikago quadruped ==============================-->
+  <!--=====================================================================-->
+
+  <!--==================== Physical Links =================================-->
+
+  <link name="linkQuadBase">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="13.715"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/chassis_vhacd_mod_zup.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/chassis_vhacd_mod_zup.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFR1">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.02 0 0"/>
+      <mass value="1.095"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor_mirror.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor_mirror.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFR2">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.04 -0.04"/>
+      <mass value="1.527"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_right_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_right_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFR3">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.16 -0.02"/>
+      <mass value="0.241"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.57079 0" xyz="0 0.0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 1.57079 0" xyz="0 0.0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFRToe">
+
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="1000.0"/>
+      <spinning_friction value="0.1"/>
+      <lateral_friction value="1.0"/>
+    </contact>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
+    </inertial>
+
+  </link>
+
+
+  <link name="linkQuadFL1">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="-.02 0 0"/>
+      <mass value="1.095"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFL2">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.04 -0.04"/>
+      <mass value="1.527"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_left_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_left_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFL3">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.16 -0.02"/>
+      <mass value="0.241"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadFLToe">
+
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="1000.0"/>
+      <spinning_friction value="0.1"/>
+      <lateral_friction value="1.0"/>
+    </contact>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
+    </inertial>
+
+  </link>
+
+
+  <link name="linkQuadRR1">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.02 0 0"/>
+      <mass value="1.095"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor_mirror.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor_mirror.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRR2">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.04 -0.04"/>
+      <mass value="1.527"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_right_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_right_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRR3">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.16 -0.02"/>
+      <mass value="0.241"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRRToe">
+
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="1000.0"/>
+      <spinning_friction value="0.1"/>
+      <lateral_friction value="1.0"/>
+    </contact>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
+    </inertial>
+
+  </link>
+
+
+  <link name="linkQuadRL1">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="-.02 0 0"/>
+      <mass value="1.095"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/hip_motor.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRL2">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.04 -0.04"/>
+      <mass value="1.527"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_left_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/upper_leg_left_vhacd.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRL3">
+
+    <contact>
+      <lateral_friction value="1"/>
+    </contact>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.16 -0.02"/>
+      <mass value="0.241"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+
+    <visual>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 1.57079 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="./laikago/lower_leg_3_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+
+  <link name="linkQuadRLToe">
+
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="1000.0"/>
+      <spinning_friction value="0.1"/>
+      <lateral_friction value="1.0"/>
+    </contact>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
+    </inertial>
+
+  </link>
+
+
+  <!--==================== Active Joints ==================================-->
+
+  <joint name="jointQuadFR1" type="continuous">
+
+    <axis xyz="0 0 1"/>
+    <parent link="linkQuadBase"/>
+    <child link="linkQuadFR1"/>
+    <origin rpy="1.57079 0 1.57079" xyz="0.199095 -0.0817145 -0.03"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFR2" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadFR1"/>
+    <child link="linkQuadFR2"/>
+    <origin rpy="0 0 0" xyz="-0.053565 0 0"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFR3" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadFR2"/>
+    <child link="linkQuadFR3"/>
+    <origin rpy="0 0 0" xyz="0.02069  -0.20833  -0.1422"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFR4" type="fixed">
+
+    <parent link="linkQuadFR3"/>
+    <child link="linkQuadFRToe"/>
+    <origin xyz="0 -0.25 -0.022"/>
+    <dynamics damping="0.0" friction="0.0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFL1" type="continuous">
+
+    <axis xyz="0 0 1"/>
+    <parent link="linkQuadBase"/>
+    <child link="linkQuadFL1"/>
+    <origin rpy="1.57079 0 1.57079" xyz="0.199095 0.0817145 -0.03"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFL2" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadFL1"/>
+    <child link="linkQuadFL2"/>
+    <origin rpy="0 0 0" xyz="0.055855  0 0"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFL3" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadFL2"/>
+    <child link="linkQuadFL3"/>
+    <origin rpy="0 0 0" xyz="-0.02069  -0.20833  -0.1422"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadFL4" type="fixed">
+
+    <parent link="linkQuadFL3"/>
+    <child link="linkQuadFLToe"/>
+    <origin xyz="0 -0.25 -0.022"/>
+    <dynamics damping="0.0" friction="0.0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRR1" type="continuous">
+
+    <axis xyz="0 0 1"/>
+    <parent link="linkQuadBase"/>
+    <child link="linkQuadRR1"/>
+    <origin rpy="1.57079 0 1.57079" xyz="-0.238195 -0.0817145 -0.03"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRR2" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadRR1"/>
+    <child link="linkQuadRR2"/>
+    <origin rpy="0 0 0" xyz="-0.053565 0 0"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRR3" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadRR2"/>
+    <child link="linkQuadRR3"/>
+    <origin rpy="0 0 0" xyz="0.02069  -0.20833  -0.1422"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRR4" type="fixed">
+
+    <parent link="linkQuadRR3"/>
+    <child link="linkQuadRRToe"/>
+    <origin xyz="0 -0.25 -0.022"/>
+    <dynamics damping="0.0" friction="0.0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRL1" type="continuous">
+
+    <axis xyz="0 0 1"/>
+    <parent link="linkQuadBase"/>
+    <child link="linkQuadRL1"/>
+    <origin rpy="1.57079 0 1.57079" xyz="-0.238195 0.0817145 -0.03"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRL2" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadRL1"/>
+    <child link="linkQuadRL2"/>
+    <origin rpy="0 0 0" xyz="0.055855  0 0"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRL3" type="continuous">
+
+    <axis xyz="-1 0 0"/>
+    <parent link="linkQuadRL2"/>
+    <child link="linkQuadRL3"/>
+    <origin rpy="0 0 0" xyz="-0.02069  -0.20833  -0.1422"/>
+
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping=".0" friction=".0"/>
+
+  </joint>
+
+
+  <joint name="jointQuadRL4" type="fixed">
+
+    <parent link="linkQuadRL3"/>
+    <child link="linkQuadRLToe"/>
+    <origin xyz="0 -0.25 -0.022"/>
+    <dynamics damping="0.0" friction="0.0"/>
+
+  </joint>
+
+</robot>
