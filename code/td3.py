@@ -6,7 +6,7 @@ from stable_baselines.td3.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv
 from stable_baselines.ddpg.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise
 
-env = gym.make('QuadGym-v0')
+env = gym.make('QuadGym-v2')
 
 # The noise objects for TD3
 n_actions = env.action_space.shape[-1]

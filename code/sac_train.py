@@ -22,24 +22,18 @@ env = gym.make('QuadGym-v2')
 
 # qpos0_hist=np.ones((1,49))
 # qpos0_hist=np.ones((1,28))
-qpos0_hist=np.ones((1,109))
+qpos0_hist=np.ones((1,121))
 
-act_hist=np.ones((1,8))
+act_hist=np.ones((1,12))
 # model = SAC(MlpPolicy1, env, verbose=1, gamma=0.99, learning_rate=0.0003, buffer_size=1500000, learning_starts=100, train_freq=1, batch_size=64, tau=0.005, tensorboard_log="./tensorboard/", full_tensorboard_log=True, n_cpu_tf_sess=8)
 model3 = SAC(MlpPolicy1, env, verbose=1, gamma=0.99, learning_rate=0.0003, buffer_size=1500000, learning_starts=100, train_freq=1, batch_size=64, tau=0.005, tensorboard_log="./tensorboard/", full_tensorboard_log=True, n_cpu_tf_sess=8)
-# model = SAC(MlpPolicy1, env, verbose=1, gamma=0.92, learning_rate=0.005, buffer_size=1000000, learning_starts=100, train_freq=10, batch_size=100, tau=0.005, tensorboard_log="./tensorboard/")
 
-# model.learn(total_timesteps=3000000, log_interval=50)
-# model.save("./trained_models/sac_quad")
+model.learn(total_timesteps=3000000, log_interval=50)
+model.save("./trained_models/sac_quad")
 
 model=SAC.load("./trained_models/sac_quad")
-# model.env=model3.env
-# model.tensorboard_log=model3.tensorboard_log
-# model.learn(total_timesteps=500000, log_interval=50)
 
-# model.save("./trained_models/sac_quad")
-
-# Enjoy trained agent
+# trained agent
 obs = env.reset()
 for i in range(5000):
     action, _states = model.predict(obs)

@@ -12,10 +12,7 @@
         <hfield name="terrain" ncol="201" nrow="201" size="30 30 5 .1"/>
     </asset>
     <worldbody>
-      <!-- <body pos="-1.448708892931069 1.6172670853172402 0.3718225071063346">
-      <freejoint/>
-      <geom condim="6" euler="0 0 0" friction="1 0.01 0.01" name="shape_1" pos="0 0 10" rgba="0 0 1 1" size="0.42980092227220745 0.37182250710633463" type="sphere"/>
-    </body> -->
+
 
 	<light cutoff="50" diffuse="0.2 .2 .2" dir="-0 0 -1.3" directional="false" exponent="1" pos="0 0 1.3" specular=".5 .5 .5"/>
 	<geom conaffinity="1" name="floor" friction="2 0.01 0.01" pos="0 0 -.55" rgba="0.8 0.9 0.8 1" size="40 40 40" type="plane"/>
@@ -27,15 +24,7 @@
   <geom type="mesh" contype="1" conaffinity="1" group="1" rgba="0 0 1 1" pos="0 0 0" mesh="chassis_vhacd_mod_zup" />
   <!-- <geom type="mesh" rgba="1 1 1 1" mesh="chassis_vhacd_mod_zup" /> -->
   <site name="cog" pos="0 0 0"/>
-  <!-- <site name="backleft" pos="-0.2 0.05 0.08" type="box" size="0.07 0.07 0.03"/>
-  <site name="backright" pos="-0.2 -0.05 0.08" type="box" size="0.07 0.07 0.03"/>
-  <site name="frontleft" pos="0.2 0.05 0.08" type="box" size="0.07 0.07 0.03"/>
-  <site name="frontright" pos="0.2 -0.05 0.08" type="box" size="0.07 0.07 0.03"/> -->
-
-  <!--<body pos="0 0 10">
-        <geom type="mesh" rgba="1 1 1 1" mesh="chassis_vhacd_mod_zup" />
-  <freejoint/>
-  </body>-->
+ 
         <!-- <body name="linkQuadFR1" pos="0.199095 -0.0817145 -0.03" quat="0.500003 0.5 0.499997 0.5"> -->
         <body name="linkQuadFR1" pos="0.199095 -0.0817145 -0.03" quat="0.5 0.5 0.5 0.5">
 
@@ -153,44 +142,44 @@
         <position name="RL2" kp="5" gear="1.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL2"/>
         <position name="RL3" kp="5" gear="1.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL3"/>-->
 
-        <!-- <motor name="FR1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFR1"/> -->
+        <motor name="FR1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFR1"/>
         <motor name="FR2" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFR2"/>
         <motor name="FR3" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFR3"/>
-        <!-- <motor name="FL1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFL1"/> -->
+        <motor name="FL1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFL1"/>
         <motor name="FL2" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFL2"/>
         <motor name="FL3" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadFL3"/>
-        <!-- <motor name="RR1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRR1"/> -->
+        <motor name="RR1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRR1"/>
         <motor name="RR2" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRR2"/>
         <motor name="RR3" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRR3"/>
-        <!-- <motor name="RL1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL1"/> -->
+        <motor name="RL1" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL1"/>
         <motor name="RL2" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL2"/>
         <motor name="RL3" gear="30.0" ctrllimited="false" forcelimited="false" joint="jointQuadRL3"/>
       </actuator>
       <sensor>
-      <!-- <jointpos name="FR1angle" joint="jointQuadFR1"/> -->
+      <jointpos name="FR1angle" joint="jointQuadFR1"/>
       <jointpos name="FR2angle" joint="jointQuadFR2"/>
       <jointpos name="FR3angle" joint="jointQuadFR3"/>
-      <!-- <jointpos name="FL1angle" joint="jointQuadFL1"/> -->
+      <jointpos name="FL1angle" joint="jointQuadFL1"/>
       <jointpos name="FL2angle" joint="jointQuadFL2"/>
       <jointpos name="FL3angle" joint="jointQuadFL3"/>
-      <!-- <jointpos name="RR1angle" joint="jointQuadRR1"/> -->
+      <jointpos name="RR1angle" joint="jointQuadRR1"/>
       <jointpos name="RR2angle" joint="jointQuadRR2"/>
       <jointpos name="RR3angle" joint="jointQuadRR3"/>
-      <!-- <jointpos name="RL1angle" joint="jointQuadRL1"/> -->
+      <jointpos name="RL1angle" joint="jointQuadRL1"/>
       <jointpos name="RL2angle" joint="jointQuadRL2"/>
       <jointpos name="RL3angle" joint="jointQuadRL3"/>
       
 
-      <!-- <jointvel name="FR1omeg" joint="jointQuadFR1"/> -->
+      <jointvel name="FR1omeg" joint="jointQuadFR1"/>
       <jointvel name="FR2omeg" joint="jointQuadFR2"/>
       <jointvel name="FR3omeg" joint="jointQuadFR3"/>
-      <!-- <jointvel name="FL1omeg" joint="jointQuadFL1"/> -->
+      <jointvel name="FL1omeg" joint="jointQuadFL1"/>
       <jointvel name="FL2omeg" joint="jointQuadFL2"/>
       <jointvel name="FL3omeg" joint="jointQuadFL3"/>
-      <!-- <jointvel name="RR1omeg" joint="jointQuadRR1"/> -->
+      <jointvel name="RR1omeg" joint="jointQuadRR1"/>
       <jointvel name="RR2omeg" joint="jointQuadRR2"/>
       <jointvel name="RR3omeg" joint="jointQuadRR3"/>
-      <!-- <jointvel name="RL1omeg" joint="jointQuadRL1"/> -->
+      <jointvel name="RL1omeg" joint="jointQuadRL1"/>
       <jointvel name="RL2omeg" joint="jointQuadRL2"/>
       <jointvel name="RL3omeg" joint="jointQuadRL3"/>
 
@@ -198,16 +187,16 @@
       <accelerometer name="cgacc" site="cog"/>
       <gyro name="cggyro" site="cog"/>
 
-      <!-- <torque name="FR1tq" site="linkQuadFR1"/> -->
+      <torque name="FR1tq" site="linkQuadFR1"/>
       <torque name="FR2tq" site="linkQuadFR2"/>
       <torque name="FR3tq" site="linkQuadFR3"/>
-      <!-- <torque name="FL1tq" site="linkQuadFL1"/> -->
+      <torque name="FL1tq" site="linkQuadFL1"/>
       <torque name="FL2tq" site="linkQuadFL2"/>
       <torque name="FL3tq" site="linkQuadFL3"/>
-      <!-- <torque name="RR1tq" site="linkQuadRR1"/> -->
+      <torque name="RR1tq" site="linkQuadRR1"/>
       <torque name="RR2tq" site="linkQuadRR2"/>
       <torque name="RR3tq" site="linkQuadRR3"/>
-      <!-- <torque name="RL1tq" site="linkQuadRL1"/> -->
+      <torque name="RL1tq" site="linkQuadRL1"/>
       <torque name="RL2tq" site="linkQuadRL2"/>
       <torque name="RL3tq" site="linkQuadRL3"/>
 

@@ -18,13 +18,13 @@ import matplotlib.pyplot as plt
 env = gym.make('QuadGym-v2')
 
 qpos0_hist=np.ones((1,109))
-act_hist=np.ones((1,8))
-# model = PPO2(MlpPolicy, env, verbose=1, max_grad_norm=0.5, n_steps=128, learning_rate=0.00025, nminibatches=4, noptepochs=4, tensorboard_log="./tensorboard/PPO_runs/", full_tensorboard_log=False, n_cpu_tf_sess=8)
+act_hist=np.ones((1,12))
+model = PPO2(MlpPolicy, env, verbose=1, max_grad_norm=0.5, n_steps=128, learning_rate=0.00025, nminibatches=4, noptepochs=4, tensorboard_log="./tensorboard/PPO_runs/", full_tensorboard_log=False, n_cpu_tf_sess=8)
 
-# model.learn(total_timesteps=5000000, log_interval=100)
-# model.save("./trained_models/ppo2_quad_working")
+model.learn(total_timesteps=5000000, log_interval=100)
+model.save("./trained_models/ppo2_quad_working")
 
-model = PPO2.load("./trained_models/ppo2_quad_working")
+# model = PPO2.load("./trained_models/ppo2_quad_working")
 
 obs = env.reset()
 for i in range(5000):
