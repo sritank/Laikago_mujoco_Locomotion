@@ -71,7 +71,7 @@ class LaikagoEnv2(mujoco_env.MujocoEnv, utils.EzPickle):
         #     reward=reward-10
         #     # reward = -100
 
-        if np.abs(self.sim.data.sensordata[87])<0.94:
+        if np.abs(self.sim.data.sensordata[83])<0.95: #using Z axis projection. To use X axis quaternion, use 87 element
             done=True
             reward=reward-10
             # reward = -100    

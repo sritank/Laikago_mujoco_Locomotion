@@ -22,10 +22,10 @@ env = gym.make('QuadGym-v2')
 
 # qpos0_hist=np.ones((1,49))
 # qpos0_hist=np.ones((1,28))
-qpos0_hist=np.ones((1,121))
+qpos0_hist=np.ones((1,137))
 
 act_hist=np.ones((1,12))
-# model = SAC(MlpPolicy1, env, verbose=1, gamma=0.99, learning_rate=0.0003, buffer_size=1500000, learning_starts=100, train_freq=1, batch_size=64, tau=0.005, tensorboard_log="./tensorboard/", full_tensorboard_log=True, n_cpu_tf_sess=8)
+model = SAC(MlpPolicy1, env, verbose=1, gamma=0.99, learning_rate=0.0003, buffer_size=1500000, learning_starts=100, train_freq=1, batch_size=64, tau=0.005, tensorboard_log="./tensorboard/", full_tensorboard_log=True, n_cpu_tf_sess=8)
 model3 = SAC(MlpPolicy1, env, verbose=1, gamma=0.99, learning_rate=0.0003, buffer_size=1500000, learning_starts=100, train_freq=1, batch_size=64, tau=0.005, tensorboard_log="./tensorboard/", full_tensorboard_log=True, n_cpu_tf_sess=8)
 
 model.learn(total_timesteps=3000000, log_interval=50)
